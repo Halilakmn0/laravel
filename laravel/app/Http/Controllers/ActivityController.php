@@ -12,7 +12,7 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        //
+        dd(Activity::all());
     }
 
     /**
@@ -20,7 +20,23 @@ class ActivityController extends Controller
      */
     public function create()
     {
-        //
+        Activity::create([
+        "customer_id" => 1,
+        "exercise_id" => 1,
+        "repetition" => 20,
+        "calor" => 150,
+        "like" => true,
+        "duration" => 10
+        ]);
+
+        Activity::create([
+        "customer_id" => 1,
+        "exercise_id" => 2,
+        "repetition" => 50,
+        "calor" => 300,
+        "like" => false,
+        "duration" => 25
+         ]);
     }
 
     /**

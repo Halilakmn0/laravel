@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
 
             // Foreign keys
-            $table->foreignId('customer_id')->constrained()->onDelete('cascade');
-            $table->foreignId('food_id')->constrained()->onDelete('cascade');
+            $table->foreignId('customer_id');
+            $table->foreignId('food_id');
 
             // Attributes
             $table->string('mealtime');

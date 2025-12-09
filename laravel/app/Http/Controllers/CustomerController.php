@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
+
 class CustomerController extends Controller
 {
     /**
@@ -12,7 +13,24 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customer = Customer::where("id","1")->get();
+        
+        $customer[0]->update([
+            "name" => "John"
+        ]);
+
+        dd(Customer::all());
+
+
+        // foreach döngüsü
+
+        /*
+        $customers = Customer::all();
+
+        foreach($customers as  $customer){
+            echo $customer->id . " - " . $customer->name . "<br/>"
+        }
+        */
     }
 
     /**
@@ -20,7 +38,22 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        Customer::create([
+            "name" => "Serdar",
+            "surname"=> "Balkı",
+            "birthYear"=>2004,
+            "gender" => "Male",
+            
+
+        ]);
+
+        Customer::create([
+            "name"=> "Jane",
+            "surname" => "Doe",
+            "birthYear"=> 1999,
+            "gender"=> "Female",
+            
+        ]);
     }
 
     /**
@@ -44,7 +77,11 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        $customer->update([
+            "surname"=> "abc"
+        ]);
+
+        dd(Customer::all());
     }
 
     /**

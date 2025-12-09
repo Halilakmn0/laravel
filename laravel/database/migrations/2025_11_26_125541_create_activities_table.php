@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
 
             // Foreign keys
-            $table->foreignId('customer_id')->constrained()->onDelete('cascade');
-            $table->foreignId('exercise_id')->constrained()->onDelete('cascade');
+            $table->foreignId('customer_id');
+            $table->foreignId('exercise_id');
 
             // Attributes
             $table->integer('repetition');

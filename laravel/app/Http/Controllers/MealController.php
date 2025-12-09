@@ -12,7 +12,7 @@ class MealController extends Controller
      */
     public function index()
     {
-        //
+        dd(Meal::all());
     }
 
     /**
@@ -20,7 +20,20 @@ class MealController extends Controller
      */
     public function create()
     {
-        //
+        Meal::create([
+        "customer_id" => 1,
+        "food_id" => 1,
+        "mealtime" => "Breakfast",
+        "like" => true
+        ]);
+
+         Meal::create([
+        "customer_id" => 1,
+        "food_id" => 2,
+        "mealtime" => "Dinner",
+        "like" => false
+        ]);
+
     }
 
     /**

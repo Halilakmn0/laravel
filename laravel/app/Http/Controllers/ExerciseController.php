@@ -12,7 +12,7 @@ class ExerciseController extends Controller
      */
     public function index()
     {
-        //
+        dd(Exercise::all());
     }
 
     /**
@@ -20,7 +20,22 @@ class ExerciseController extends Controller
      */
     public function create()
     {
-        //
+        
+     Exercise::create([
+        "name" => "Push Ups",
+        "type" => "Strength",
+        "unit" => "repetition",
+        "calor" => 50
+    ]);
+
+     Exercise::create([
+        "name" => "Running",
+        "type" => "Cardio",
+        "unit" => "minute",
+        "calor" => 200
+    ]);
+        
+
     }
 
     /**
