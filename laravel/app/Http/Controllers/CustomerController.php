@@ -15,8 +15,11 @@ class CustomerController extends Controller
     {
 
         $customers = Customer::all();
-        return view('customers.list', compact('customers'));
+        return response()->json($customers);
+
         /*
+        return view('customers.list', compact('customers'));
+        
 
         $customer = Customer::where("id","1")->get();
         
@@ -43,7 +46,13 @@ class CustomerController extends Controller
      */
     public function create()
     {
+
+
+        
+        
         /*
+        return response()->json(true)
+        
         Customer::create([
             "name" => "Serdar",
             "surname"=> "Balkı",
@@ -79,7 +88,8 @@ class CustomerController extends Controller
         ]);
 
         // return view('customers.list');
-        return redirect()->route('customers.index');
+        return response()->json($customer);
+        //return redirect()->route('customers.index');
     }
 
     /**
